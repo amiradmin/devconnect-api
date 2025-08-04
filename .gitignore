@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.env
+venv/
+.env
+
+# VSCode
+.vscode/
+
+# Docker
+*.pid
+*.log
+
+# Byte-compiled / optimized / DLL files
+*.pyc
+
+# Alembic
+migrations/
+
+# System
+.DS_Store
+
+# SQLite (if used temporarily)
+*.db
