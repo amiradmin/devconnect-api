@@ -1,11 +1,9 @@
 from fastapi import FastAPI
-from app.core.database import Base, engine
-from app.models import user
+from app.routes import user
 
-app = FastAPI(title="DevConnect API", version="1.0.0")
+app = FastAPI()
 
-# Auto-create tables
-Base.metadata.create_all(bind=engine)
+app.include_router(user.router)
 
 @app.get("/")
 def root():
