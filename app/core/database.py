@@ -9,3 +9,16 @@ engine = create_engine(SQLALCHEMY_DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 Base = declarative_base()
+
+# Dependency for FastAPI routes
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
+        
+#  Add this
+def create_tables():
+    from app.models import user  # make sure this imports your User model
+    Base.metadata.create_all(bind=engine)

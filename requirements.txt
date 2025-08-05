@@ -1,11 +1,23 @@
 fastapi
 uvicorn[standard]
-python-dotenv
-sqlalchemy
+
+# Async SQLAlchemy + Postgres
+sqlalchemy>=2.0
 asyncpg
+
+# Migrations
 alembic
+
+# Auth
 passlib[bcrypt]
-python-jose
+python-jose[cryptography]
+
+# Env/config handling
+python-dotenv
 pydantic-settings
+
+# PostgreSQL client (choose one, not both)
 psycopg2-binary
-pydantic[email]
+
+# Email validation
+pydantic[email]  # ✅ OK, but you don't really need this in v2+, email validation is built-in
