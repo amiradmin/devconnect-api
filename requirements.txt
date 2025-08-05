@@ -21,3 +21,4 @@ psycopg2-binary
 
 # Email validation
 pydantic[email]  # ✅ OK, but you don't really need this in v2+, email validation is built-in
+python-multipart
